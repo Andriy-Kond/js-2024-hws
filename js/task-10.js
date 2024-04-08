@@ -57,9 +57,11 @@ refs.destroyBtn.addEventListener("click", onDestroyBtnClick);
 function onCreateBtnClick() {
   if (Number(refs.input.value) <= 0) {
     refs.boxes.innerHTML = "";
-    const message = document.createElement("span");
-    message.textContent = "Введіть число більше нуля";
-    refs.boxes.append(message);
+
+    alert("Введіть число більше нуля");
+    // const message = document.createElement("span");
+    // message.textContent = "Введіть число більше нуля";
+    // refs.boxes.append(message);
     return;
   }
 
