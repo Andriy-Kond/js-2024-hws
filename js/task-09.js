@@ -8,11 +8,14 @@ function getRandomHexColor() {
 
 // Для генерування випадкового кольору використовуй функцію getRandomHexColor.
 
-const body = document.querySelector("body");
-const button = document.querySelector(".change-color");
-const span = document.querySelector(".color");
-button.addEventListener("click", e => {
+const refs = {
+  body: document.querySelector("body"),
+  button: document.querySelector(".change-color"),
+  span: document.querySelector(".color"),
+};
+
+refs.button.addEventListener("click", () => {
   const color = getRandomHexColor();
-  body.style.backgroundColor = color;
-  span.textContent = color;
+  refs.body.style.backgroundColor = color;
+  refs.span.textContent = color;
 });
