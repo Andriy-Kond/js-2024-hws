@@ -51,7 +51,7 @@ const refs = {
 //   refs.input.value = "";
 // }
 
-// * Solve #2:
+// * Solve #2 (more fn for big project):
 refs.createBtn.addEventListener("click", onCreateBtnClick);
 refs.destroyBtn.addEventListener("click", onDestroyBtnClick);
 
