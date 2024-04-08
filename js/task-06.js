@@ -15,5 +15,10 @@ const input = document.querySelector("#validation-input");
 input.addEventListener("blur", e => {
   const symbolsQty = e.currentTarget.value.length;
   const neededLength = e.currentTarget.dataset.length;
+  if (!symbolsQty) {
+    input.classList = "";
+    return;
+  }
+
   input.classList = symbolsQty === Number(neededLength) ? "valid" : "invalid";
 });
