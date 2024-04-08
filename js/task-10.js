@@ -28,7 +28,7 @@ const refs = {
   boxes: document.querySelector("#boxes"),
 };
 
-// * Solve #1:
+// * Solve #1 (fast-codding):
 // refs.createBtn.addEventListener("click", createBoxes);
 // refs.destroyBtn.addEventListener("click", destroyBoxes);
 
