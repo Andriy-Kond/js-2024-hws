@@ -21,6 +21,12 @@ function getRandomHexColor() {
 //   destroyBtn: document.querySelector("[data-destroy]"),
 //   boxes: document.querySelector("#boxes"),
 // };
+const refs = {
+  input: document.querySelector("#controls input"),
+  createBtn: document.querySelector("[data-create]"),
+  destroyBtn: document.querySelector("[data-destroy]"),
+  boxes: document.querySelector("#boxes"),
+};
 
 // * Solve #1:
 // refs.createBtn.addEventListener("click", createBoxes);
@@ -29,13 +35,15 @@ function getRandomHexColor() {
 // function createBoxes() {
 //   let string = "";
 //   for (let i = 0; i < Number(refs.input.value); i += 1) {
-//     string += `<div style="width: ${30 + i * 10}px; height: ${
-//       30 + i * 10
-//     }px; background-color:${getRandomHexColor()}"></div>`;
+//     string += `<div style="
+//       width: ${30 + i * 10}px;
+//       height: ${30 + i * 10}px;
+//       background-color:${getRandomHexColor()}"></div>`;
 //   }
 
 //   refs.boxes.insertAdjacentHTML("afterbegin", string);
-//   // refs.boxes.innerHTML(string);
+//   // або:
+//   // refs.boxes.innerHTML = string;
 // }
 
 // function destroyBoxes() {
@@ -44,13 +52,6 @@ function getRandomHexColor() {
 // }
 
 // * Solve #2:
-const refs = {
-  input: document.querySelector("#controls input"),
-  createBtn: document.querySelector("[data-create]"),
-  destroyBtn: document.querySelector("[data-destroy]"),
-  boxes: document.querySelector("#boxes"),
-};
-
 refs.createBtn.addEventListener("click", onCreateBtnClick);
 refs.destroyBtn.addEventListener("click", onDestroyBtnClick);
 
@@ -59,6 +60,7 @@ function onCreateBtnClick() {
     refs.boxes.innerHTML = "";
 
     alert("Введіть число більше нуля");
+    // або:
     // const message = document.createElement("span");
     // message.textContent = "Введіть число більше нуля";
     // refs.boxes.append(message);
@@ -66,7 +68,6 @@ function onCreateBtnClick() {
   }
 
   createBoxes(Number(refs.input.value));
-
   clearInput();
 }
 
@@ -74,13 +75,9 @@ function createBoxes(amount) {
   const elements = createElements(amount);
   createStyles(elements);
   const newElements = elements.map(el => el.outerHTML).join("");
+  // або:
   // let newElements = "";
   // elements.forEach(el => (newElements += el.outerHTML));
-
-  // const newElements = elements.reduce((previousValue, currentValue) => {
-  //   return (previousValue += `${currentValue}`);
-  // }, "");
-  // console.log("newElements >> newElements:::", newElements);
 
   refs.boxes.insertAdjacentHTML("afterbegin", newElements);
 }
