@@ -28,3 +28,11 @@ button {
   flex-direction: column;
   gap: 40px;
 }
+
+.valid {
+  border: 1px solid #03ce03;
+}
+
+.inbvalid {
+  border: 1px solid #ce030d;
+}
